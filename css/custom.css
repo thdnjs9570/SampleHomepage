@@ -1,0 +1,51 @@
+html,body{height:100%}
+body{margin:0}
+#wrap{min-height:100%}
+#container{padding-bottom:1em}
+#footer{background-color:#D3ECD6; margin-top:-1em;height:9em }
+
+
+.navbar-default {
+    background-color: #D3ECD6;
+    border-color: #D3ECD6;
+}
+
+.navbar-default .navbar-brand {
+    color: #5A5A59;
+}
+
+.navbar-default .navbar-nav{
+	color:#5A5A59;
+}
+
+.navbar-default .navbar-nav .dropdown-menu  { 
+  background-color: #D3ECD6;
+  color:#fff;
+}
+.navbar-default .navbar-nav .dropdown-menu>li>a  { 
+  color: #5A5A59;
+}
+.navbar-default .navbar-nav .dropdown-menu>li>a:hover,.navbar-custom .navbar-nav .dropdown-menu>li>a:focus  { 
+  color: #5A5A59;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #5A5A59;
+    background-color: #D3ECD6;
+}
+
+.carousel-control.left, .carousel-control.right {
+   background-image:none;
+   filter:none;
+}
+
+.glyphicon {
+    font-size: 30px;
+    line-height: 50px;
+    color:#234731;
+}
+
+
+#footer p{
+	margin: 70px 0px 0px 500px;
+}

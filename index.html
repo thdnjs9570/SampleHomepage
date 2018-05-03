@@ -4,71 +4,242 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>Step04_Scrollspy.html</title>
+	<title>shopping mall</title>
 	<link rel="stylesheet" href="css/bootstrap.css"/>
 	<style>
-		body{
-			position: relative;
-			padding-top: 60px;
-		}
+	body{
+		position: relative;
+		padding-top: 60px;
+	}
+	ul{
+		float:left;
+	}
+	ul li{
+		list-style-type: none;
+	}
+	ul li a{
+		font-weight: bold;
+	}
+	.spacer{
+		height: 500px;
+		background-color: #cecece;
+	}
 
-		.spacer{
-			height: 500px;
-			background-color: #cecece;
-		}
+	#navbar-example{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: white;
+		z-index: 999;
+	}
 
-		#navbar-example{
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			height:500px;
-			background-color: white;
-			opacity: 0.8;
-		}
+	#navbar-example .nav-pills li{
+		line-height: 120px;
+		background-color: #fff;
+	}
 
-	</style>	
+	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    	color: #fff;
+    	background-color: #fff;
+	}
+
+	#navbar-example .col-xs-8{
+		position:relative;
+	}
+	
+	#navbar-example .col-xs-8 .header_ul{
+		list-style-type: none;
+		position: absolute;
+		top:65px;
+		right:50px;
+	}
+	
+	#navbar-example .col-xs-8 .header_ul li{
+		float:left;
+		
+	}
+
+	#navbar-example .col-xs-8 .header_ul li a{
+		color:black;
+		margin-left: 8px;
+		margin-right: 8px;
+		font-style:bold;
+	}
+
+	.container-fluid{
+		z-index: 0;
+		margin-top: 120px;
+	}
+
+	#ul_left{
+		position:fixed;
+		font-weight: bold;
+		font-size:16px;
+	}
+	#ul_left li{
+		margin-top: 11px;
+	}
+
+	h3{
+		margin-left: 40px;
+	}
+
+
+</style>	
 </head>
 
 
-<body data-target="#navbar-example" data-spy="scroll" 
-	data-offset="60">
-<div id="navbar-example">
-	<!-- ul 에 nav 클래스 추가 -->
-	<ul id="myNav" class="nav nav-pills">
-		<li class="active"><a href="#one">One</a></li>
-		<li><a href="#two">Two</a></li>
-		<li><a href="#three">Three</a></li>
-		<li><a href="#four">Four</a></li>
-		<li><a href="#five">Five</a></li>
-	</ul>	
-</div>
-<div class="container">
-	<div id="one">
-		one
-		<div class="spacer"></div>
+<body data-target="#navbar-example" data-spy="scroll" data-offset="60">
+
+	<div id="navbar-example">
+
+		<div class="row">
+			<div class="col-xs-4">
+				<ul class="nav nav-pills">
+					<li class="active"><a href="#"><img src="images/logo.jpg" alt="로고"></a></li>
+				</ul>	
+			</div>	
+
+			<div class="col-xs-8">
+				<ul class="header_ul">
+					<li><a href="#" data-toggle="modal" data-target="#myModal">join</a></li> <!--누르면 modal창 나오게-->
+					<li><a href="#">log-in</a></li>
+					<li><a href="#">my-page</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><span class="glyphicon glyphicon-shopping-cart"></span></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<div id="two">
-		two
-		<div class="spacer"></div>
+
+	<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Login Form</h3>
+        </div>
+        <!-- body -->
+        <div class="modal-header">
+          <form role="form">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email"/>
+              <input type="password" class="form-control" placeholder="Password" />
+            </div>
+          </form>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-block">Log In</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+	<div class="container-fluid">
+		
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="content_left">
+
+					<ul id = "ul_left">
+						<li>WOMAN</li>
+						<li>MAN</li>
+						<li>DALIYLOOK</li>
+						<li>VIDEO</li>
+						<li>PROJECT+</li>
+						<li>COMMUNITY</li>
+					</ul>
+
+				</div>
+			</div>
+
+			<div class="col-sm-9">
+				<div class="content_right">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+						<!-- Carousel 하단의 동그란 nav 요소  -->
+						<ol class="carousel-indicators">
+					<!-- data-target="Carousel 전체의 선택자" 
+						data-slide-to="컨텐츠 인덱스" -->
+							<li data-target="#myCarousel" data-slide-to="0"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="images/img1.jpg"/>
+								<div class="carousel-caption">
+								</div>
+							</div>
+							<div class="item">
+								<img src="images/img2.jpg"/>
+								<div class="carousel-caption">
+							
+								</div>
+							</div>
+							<div class="item">
+								<img src="images/img3.jpg"/>
+								<div class="carousel-caption">
+								</div>
+							</div>
+
+							<a href="#myCarousel" class="left carousel-control" data-slide="prev">
+						
+								<span class="sr-only">이전</span>
+							</a>
+							<a href="#myCarousel" class="right carousel-control" data-slide="next">
+								<span class="sr-only">다음</span>
+							</a>
+
+						</div>
+						
+						<div style="margin-top: 100px; margin-left: 50px">
+						
+							<div class="row">
+
+								<div class="col-sm-6">
+									<img src="images/pic1.jpg" alt="">
+									<h3>BRIGHT LIGHT ,JEJU</h3>
+								</div>
+
+								<div class="col-sm-6">
+									<img src="images/pic2.jpg" alt="">
+									<h3>BRIGHT LIGHT ,JEJU</h3>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="col-sm-6">
+									<img src="images/pic3.jpg" alt="">
+									<h3>BRIGHT LIGHT ,JEJU</h3>
+								</div>
+
+								<div class="col-sm-6">
+									<img src="images/pic4.jpg" alt="">
+									<h3>BRIGHT LIGHT ,JEJU</h3>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
 	</div>
-	<div id="three">
-		three
-		<div class="spacer"></div>
-	</div>
-	<div id="four">
-		four
-		<div class="spacer"></div>
-	</div>
-	<div id="five">
-		five
-		<div class="spacer"></div>
-	</div>
-</div>
+
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/bootstrap.js"></script>	
 <script src="js/jquery.smooth-scroll.js"></script>
 <script>
+
 	$("#myNav a").smoothScroll({
 		offset:-60
 	});
